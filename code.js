@@ -8,7 +8,7 @@
     
     const board = {
         gameboard : ["", "", "","","","","","",""],
-        display: this.display
+        display: this.gameboard
     };
 
 
