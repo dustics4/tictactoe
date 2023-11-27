@@ -14,9 +14,10 @@
     ]
     //starting with player X
     //Making sure that gameOver is set to false, can use it as Bool in if statements later on
-    let currentPlay = "X";
+    let currentPlayer = "X";
     let gameOver = false;
 
+    //function to display the board
     function displayBoard() {
         //foreveryrow
         for(let i = 0; i < 3; i++){
@@ -29,7 +30,20 @@
             console.log(row);
         }
     }
-    //made change
+    
+    //function to check win conditions
+
+    function winCon(){
+        //check rows
+        for(let i = 0; i < 3; i++){
+            if(gameboard[i][0] === currentPlayer && gameboard[i][1] === currentPlayer && gameboard[i][2] === currentPlayer){
+                return true;
+            }
+        }
+
+    }
+
+
 
 
     
