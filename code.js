@@ -48,6 +48,14 @@
             }
         }
 
+        //check diagonal 
+        if(
+            (gameboard[0][0] === currentPlayer && gameboard[1][1] == currentPlayer && gameboard[2][2] == currentPlayer) ||
+            (gameboard[0][2] === currentPlayer && gameboard[1][1] == currentPlayer && gameboard[2][0] == currentPlayer)
+        ) {
+            return true
+        }
+
     }
 
 
