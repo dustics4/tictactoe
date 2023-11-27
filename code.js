@@ -41,6 +41,13 @@
             }
         }
 
+        //check columns
+        for(let j = 0; j < 3; i++){
+            if(gameboard[j][0] === currentPlayer && gameboard[j][1] === currentPlayer && gameboard[j][2] === currentPlayer){
+                return true;
+            }
+        }
+
     }
 
 
