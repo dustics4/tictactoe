@@ -4,7 +4,7 @@
 // Object create for Player1,player2 , symbol
 //Need to create startGame Object
 
-(function() {
+const tictactoe = (function() {
     
     //create an array to hold the gameboard
     const gameboard = [
@@ -42,7 +42,7 @@
         }
 
         //check columns
-        for(let j = 0; j < 3; i++){
+        for(let j = 0; j < 3; j++){
             if(gameboard[j][0] === currentPlayer && gameboard[j][1] === currentPlayer && gameboard[j][2] === currentPlayer){
                 return true;
             }
@@ -73,14 +73,29 @@
             gameboard[row][col] = currentPlayer;
             //Once the move has been made we display the move on the board
             displayBoard();
-            
+            if(winCon()) {
+                console.log("Player : " + currentPlayer + "Has Won!")
+                gameOver = true;
+            }else if (!gameboard.flat().includes("-")){
+                console.log ("It's a tie!");
+                gameOver = true;
+            }else {
+                currentPlayer = currentPlayer === "X" ? "O" : "X";
+                console.log("Next player : " + currentPlayer);
+            }
         }
             
     }
 
+    displayBoard();
+    console.log("The player starts with : " + currentPlayer);
 
 
+    //To make moves, type them here e.g makeMove(0,1);
+    //Moves are index based
 
-    
+    makeMove(0,1);
+    makeMove(0,0);
 
 })();
+
