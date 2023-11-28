@@ -58,6 +58,10 @@
 
     }
 
+    //Now need to write a function to play the game
+    //We need to display the board first
+    // Once the board is displayed we get the player to choose their index
+
 
 
 
