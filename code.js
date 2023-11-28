@@ -61,6 +61,22 @@
     //Now need to write a function to play the game
     //We need to display the board first
     // Once the board is displayed we get the player to choose their index
+    //function will take rows/colums
+
+    function makeMove(row, col) {
+
+        //start with making sure the game is started
+        // "!gameover" and gameboard row , col are equal to  "-" , has to be equal to player
+
+        if(!gameOver && gameboard[row][col] === "-" ){
+            //now me make sure game board is filled with the current player
+            gameboard[row][col] = currentPlayer;
+            //Once the move has been made we display the move on the board
+            displayBoard();
+            
+        }
+            
+    }
 
 
 
