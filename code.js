@@ -13,21 +13,25 @@ const tictactoe = (function() {
 
     //Grabbing the cells from HTML doc
     const cells = document.getElementsByClassName("cell");
-
     //Button to reset
     const restartButton = document.getElementById('restart');
 
-    
+
     //create an array to hold the gameboard
-    const gameboard = [
-        ["-", "-", "-"],
-        ["-", "-", "-"],
-        ["-", "-", "-"]
-    ]
+    let gameBoard = ['', '', '', '', '', '', '', '', ''];
     //starting with player X
-    //Making sure that gameOver is set to false, can use it as Bool in if statements later on
     let currentPlayer = "X";
-    let gameOver = false;
+    //Win combinations. Each inner array represents the winning combination of cell indeces
+    const winCombos = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+      ];
 
     //function to display the board
     //We need to change the function to display show the board with the cells now.
