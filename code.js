@@ -4,7 +4,23 @@
 // Object create for Player1,player2 , symbol
 //Need to create startGame Object
 
-const tictactoe = (function() {
+const tictactoe = (function() { 
+
+    //Working with DOM elements
+    // We need to add the cells and do something with them
+    // Create a restart button
+    // Make sure that the current player shows
+
+    //Grabbing the cells from HTML doc
+    const cells = document.getElementsByClassName("cell");
+
+    //Button to reset
+    const resetButton = document.createElement("button");
+    resetButton.textContent = "Reset";
+
+    //Current player will be displayer with this.
+    const currentPlayerDisplay = document.createElement("div");
+
     
     //create an array to hold the gameboard
     const gameboard = [
