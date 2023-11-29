@@ -105,6 +105,7 @@ const tictactoe = (function() {
     displayBoard();
     console.log("The player starts with : " + currentPlayer);
 
+    //make sure that click function shows the player on the gameboard
 
     //To make moves, type them here e.g makeMove(0,1);
     //Moves are index based
