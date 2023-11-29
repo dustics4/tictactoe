@@ -18,7 +18,7 @@ const tictactoe = (function() {
 
 
     //create an array to hold the gameboard
-    let gameBoard = ['', '', '', '', '', '', '', '', ''];
+    let gameboard = ['', '', '', '', '', '', '', '', ''];
     //starting with player X
     let currentPlayer = "X";
     //Win combinations. Each inner array represents the winning combination of cell indeces
