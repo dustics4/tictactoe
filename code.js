@@ -15,11 +15,7 @@ const tictactoe = (function() {
     const cells = document.getElementsByClassName("cell");
 
     //Button to reset
-    const resetButton = document.createElement("button");
-    resetButton.textContent = "Reset";
-
-    //Current player will be displayer with this.
-    const currentPlayerDisplay = document.createElement("div");
+    const restartButton = document.getElementById('restart');
 
     
     //create an array to hold the gameboard
@@ -34,11 +30,10 @@ const tictactoe = (function() {
     let gameOver = false;
 
     //function to display the board
+    //We need to change the function to display show the board with the cells now.
     function displayBoard() {
         //foreveryrow
         for(let i = 0; i < 3; i++){
-            //make sure that row is empty
-            let row = "";
             //foreverycolumn
             for(let j = 0 ; j < 3; j++){
                 row += gameboard[i][j] + "";
