@@ -79,6 +79,8 @@ const tictactoe = (function() {
         // we then make sure that the gameboard cell index is  = current player
         //then event targe text content == player to show it on the cell index
         //then we can run a if statement to check wins   
+        const id = e.target.id;
+        
     }
 
     //need to create a check win function
