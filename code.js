@@ -102,6 +102,15 @@ const tictactoe = (function() {
             
     }
 
+    function cellClick() {
+
+    }
+
+    //button section
+    cells.forEach(cell => cell.addEventListener('click', cellClick))
+
+    //
+
     displayBoard();
     console.log("The player starts with : " + currentPlayer);
 
