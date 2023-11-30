@@ -15,6 +15,8 @@ const tictactoe = (function() {
     const cells = document.getElementsByClassName("cell");
     //Button to reset
     const restartButton = document.getElementById('restart');
+    //Show winner
+    const winnerShow = document.getElementById('winner');
 
     //create an array to hold the gameboard
     let gameboard = ['', '', '', '', '', '', '', '', ''];
@@ -50,7 +52,6 @@ const tictactoe = (function() {
 
         //start with making sure the game is started
         // "!gameover" and gameboard row , col are equal to  "-" , has to be equal to player
-
         if(!gameOver && gameboard[row][col] === "-" ){
             //now me make sure game board is filled with the current player
             gameboard[row][col] = currentPlayer;
@@ -71,8 +72,16 @@ const tictactoe = (function() {
     }
 
     function cellClick() {
-
+        //when clicking the button we would like to make sure the empty cell is placed with a X or O
+        //To do this the function has to pass a event
+        // the event is passed to the cell index - so create a cell index variable
+        // then check if the gameboard index == '' and  is not winnner.textcontent
+        // we then make sure that the gameboard cell index is  = current player
+        //then event targe text content == player to show it on the cell index
+        //then we can run a if statement to check wins   
     }
+
+    //need to create a check win function
 
     //button section
     cells.forEach(cell => cell.addEventListener('click', cellClick))
