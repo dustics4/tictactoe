@@ -87,17 +87,5 @@ const tictactoe = (function() {
     cells.forEach(cell => cell.addEventListener('click', cellClick))
 
     //
-
-    displayBoard();
-    console.log("The player starts with : " + currentPlayer);
-
-    //make sure that click function shows the player on the gameboard
-
-    //To make moves, type them here e.g makeMove(0,1);
-    //Moves are index based
-
-    makeMove(0,1);
-    makeMove(0,0);
-
 })();
 
