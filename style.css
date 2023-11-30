@@ -1,9 +1,42 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .cell {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     border: 1px solid #000;
     display: inline-block;
     text-align: center;
+    background-color: #ffffff;
     font-size: 24px;
     cursor: pointer;
+}
+
+.cell:hover {
+    border: 1px solid #852d2d;
+}
+
+.containter {
+    background-color: #232222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+.containter h1 {
+    font-family: 'Raleway' , sans-serif;
+    color: #f3f3f3;
+    font-size: 3rem;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    margin: 20px 0;
 }

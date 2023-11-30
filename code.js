@@ -16,7 +16,6 @@ const tictactoe = (function() {
     //Button to reset
     const restartButton = document.getElementById('restart');
 
-
     //create an array to hold the gameboard
     let gameboard = ['', '', '', '', '', '', '', '', ''];
     //starting with player X
