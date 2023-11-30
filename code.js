@@ -71,7 +71,7 @@ const tictactoe = (function() {
             
     }
 
-    function cellClick() {
+    function cellClick(e) {
         //when clicking the button we would like to make sure the empty cell is placed with a X or O
         //To do this the function has to pass a event
         // the event is passed to the cell index - so create a cell index variable
