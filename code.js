@@ -46,37 +46,6 @@ const tictactoe = (function() {
         }
     }
     
-    //function to check win conditions
-
-    function winCon(){
-        //check rows
-        for(let i = 0; i < 3; i++){
-            if(gameboard[i][0] === currentPlayer && gameboard[i][1] === currentPlayer && gameboard[i][2] === currentPlayer){
-                return true;
-            }
-        }
-
-        //check columns
-        for(let j = 0; j < 3; j++){
-            if(gameboard[j][0] === currentPlayer && gameboard[j][1] === currentPlayer && gameboard[j][2] === currentPlayer){
-                return true;
-            }
-        }
-
-        //check diagonal 
-        if(
-            (gameboard[0][0] === currentPlayer && gameboard[1][1] == currentPlayer && gameboard[2][2] == currentPlayer) ||
-            (gameboard[0][2] === currentPlayer && gameboard[1][1] == currentPlayer && gameboard[2][0] == currentPlayer)
-        ) {
-            return true
-        }
-
-    }
-
-    //Now need to write a function to play the game
-    //We need to display the board first
-    // Once the board is displayed we get the player to choose their index
-    //function will take rows/colums
 
     function makeMove(row, col) {
 
