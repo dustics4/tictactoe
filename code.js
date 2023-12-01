@@ -12,7 +12,7 @@ const tictactoe = (function() {
     // Make sure that the current player shows
 
     //Grabbing the cells from HTML doc
-    const cells = document.getElementsByClassName("cell");
+    const cells = Array.from(document.getElementsByClassName("cell"));
     //Button to reset
     const restartButton = document.getElementById('restart');
     //Show winner
@@ -77,17 +77,24 @@ const tictactoe = (function() {
         // the event is passed to the cell index - so create a cell index variable
         // then check if the gameboard index == '' and  is not winnner.textcontent
         // we then make sure that the gameboard cell index is  = current player
-        //then event targe text content == player to show it on the cell index
+        //then event target text content == player to show it on the cell index
         //then we can run a if statement to check wins   
         const id = e.target.id;
-        
+        if(gameboard[id] == '' && !winnerShow.textContent){
+            gameboard[id] = currentPlayer;
+            e.target.textContent = currentPlayer;
+        }
+
     }
 
     //need to create a check win function
 
     //button section
-    cells.forEach(cell => cell.addEventListener('click', cellClick))
+    const startGame = () => {
+        cells.forEach(cell => cell.addEventListener('click',cellClick));
+    }
 
-    //
+    startGame();
+    
 })();
 
