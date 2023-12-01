@@ -17,9 +17,7 @@ const tictactoe = (function() {
     const restartButton = document.getElementById('restart');
     //Show winner
     const winnerShow = document.getElementById('winner');
-
-    //create an array to hold the gameboard
-    let gameboard = ['', '', '', '', '', '', '', '', ''];
+    
     //starting with player X
     let currentPlayer = "X";
     //Win combinations. Each inner array represents the winning combination of cell indeces
@@ -82,7 +80,7 @@ const tictactoe = (function() {
         const id = e.target.id;
         if(gameboard[id] == '' && !winnerShow.textContent){
             gameboard[id] = currentPlayer;
-            e.target.textContent = currentPlayer;
+            e.target.innerText = currentPlayer;
         }
 
     }
