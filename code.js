@@ -1,9 +1,3 @@
-//We are going to store the gameboard inside of an array
-//The gameboard array has to be stored inside of a board Object
-//We will want players to be stored in objects too
-// Object create for Player1,player2 , symbol
-//Need to create startGame Object
-
 const tictactoe = (function() { 
 
     //Working with DOM elements
@@ -17,9 +11,13 @@ const tictactoe = (function() {
     const restartButton = document.getElementById('restart');
     //Show winner
     const winnerShow = document.getElementById('winner');
-    
+
     //starting with player X
-    let currentPlayer = "X";
+    let playerX = "X";
+    let playerO = "O";
+    let currentPlayer = playerX;
+    
+    gameboardArr = Array(9).fill('');
     //Win combinations. Each inner array represents the winning combination of cell indeces
     const winCombos = [
         [0, 1, 2],
@@ -32,56 +30,24 @@ const tictactoe = (function() {
         [2, 4, 6]
       ];
 
-    //function to display the board
-    //We need to change the function to display show the board with the cells now.
-    function displayBoard() {
-        //foreveryrow
-        for(let i = 0; i < 3; i++){
-            //foreverycolumn
-            for(let j = 0 ; j < 3; j++){
-                row += gameboard[i][j] + "";
-            }
-            console.log(row);
-        }
-    }
-    
+    const playerWon = () =>  {
+        //checking for each codition in in Combos
+        for(let condition of winCombos){
 
-    function makeMove(row, col) {
+            //setting condition variable to look for each first 3 numbers of row in array of win Combos
+            let [a , b , c] = condition;
 
-        //start with making sure the game is started
-        // "!gameover" and gameboard row , col are equal to  "-" , has to be equal to player
-        if(!gameOver && gameboard[row][col] === "-" ){
-            //now me make sure game board is filled with the current player
-            gameboard[row][col] = currentPlayer;
-            //Once the move has been made we display the move on the board
-            displayBoard();
-            if(winCon()) {
-                console.log("Player : " + currentPlayer + "Has Won!")
-                gameOver = true;
-            }else if (!gameboard.flat().includes("-")){
-                console.log ("It's a tie!");
-                gameOver = true;
-            }else {
-                currentPlayer = currentPlayer === "X" ? "O" : "X";
-                console.log("Next player : " + currentPlayer);
+            // if the gameboard array is equal to any of the win combos shown, we return the win combo
+            if(gameboardArr[a] && (gameboardArr[a] == gameboardArr[b] == gameboardArr[c])){
+                return [a , b , c]
             }
-        }
-            
+        }   
+        return false;
     }
 
     function cellClick(e) {
-        //when clicking the button we would like to make sure the empty cell is placed with a X or O
-        //To do this the function has to pass a event
-        // the event is passed to the cell index - so create a cell index variable
-        // then check if the gameboard index == '' and  is not winnner.textcontent
-        // we then make sure that the gameboard cell index is  = current player
-        //then event target text content == player to show it on the cell index
-        //then we can run a if statement to check wins   
-        const id = e.target.id;
-        if(gameboard[id] == '' && !winnerShow.textContent){
-            gameboard[id] = currentPlayer;
-            e.target.innerText = currentPlayer;
-        }
+        //
+        
 
     }
 
