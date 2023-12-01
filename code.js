@@ -1,10 +1,5 @@
 const tictactoe = (function() { 
 
-    //Working with DOM elements
-    // We need to add the cells and do something with them
-    // Create a restart button
-    // Make sure that the current player shows
-
     //Grabbing the cells from HTML doc
     const cells = Array.from(document.getElementsByClassName("cell"));
     //Button to reset
@@ -30,6 +25,29 @@ const tictactoe = (function() {
         [2, 4, 6]
       ];
 
+    function makeMove(row, col) {
+
+        //start with making sure the game is started
+        // "!gameover" and gameboard row , col are equal to  "-" , has to be equal to player
+        if(!gameOver && gameboard[row][col] === "-" ){
+            //now me make sure game board is filled with the current player
+            gameboard[row][col] = currentPlayer;
+            //Once the move has been made we display the move on the board
+            displayBoard();
+            if(winCon()) {
+                console.log("Player : " + currentPlayer + "Has Won!")
+                gameOver = true;
+            }else if (!gameboard.flat().includes("-")){
+                console.log ("It's a tie!");
+                gameOver = true;
+            }else {
+                currentPlayer = currentPlayer === "X" ? "O" : "X";
+                console.log("Next player : " + currentPlayer);
+            }
+        }
+            
+    }
+
     const playerWon = () =>  {
         //checking for each codition in in Combos
         for(let condition of winCombos){
@@ -46,12 +64,18 @@ const tictactoe = (function() {
     }
 
     function cellClick(e) {
-        //
-        
+        let index = e.target.index;
+        if(!gameboardArr[index]){
+            gameboardArr[index] = currentPlayer;
+            e.target.innerText = currentPlayer;
+            console.log(currentPlayer);
+
+            currentPlayer = currentPlayer == playerX ? playerO : playerX;
+
+        }
+
 
     }
-
-    //need to create a check win function
 
     //button section
     const startGame = () => {
