@@ -12,7 +12,9 @@ const tictactoe = (function() {
     let playerO = "O";
     let currentPlayer = playerX;
     
+    //creating a empty array
     gameboardArr = Array(9).fill('');
+
     //Win combinations. Each inner array represents the winning combination of cell indeces
     const winCombos = [
         [0, 1, 2],
@@ -64,14 +66,21 @@ const tictactoe = (function() {
     }
 
     function cellClick(e) {
+        //when button is clicked take the index
         let index = e.target.index;
+
+        //if it is not the gameboard array index
         if(!gameboardArr[index]){
+            //gameboard index is equal to current player
             gameboardArr[index] = currentPlayer;
+            //we make the current player appear
             e.target.innerText = currentPlayer;
             console.log(currentPlayer);
 
-            currentPlayer = currentPlayer == playerX ? playerO : playerX;
 
+        }else {
+            currentPlayer = currentPlayer == playerX ? playerO : playerX;
+            e.target.innerText = currentPlayer;
         }
 
 
