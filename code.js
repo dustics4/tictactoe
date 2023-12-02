@@ -50,39 +50,29 @@ const tictactoe = (function() {
             
     }
 
-    const playerWon = () =>  {
-        //checking for each codition in in Combos
-        for(let condition of winCombos){
-
-            //setting condition variable to look for each first 3 numbers of row in array of win Combos
-            let [a , b , c] = condition;
-
-            // if the gameboard array is equal to any of the win combos shown, we return the win combo
-            if(gameboardArr[a] && (gameboardArr[a] == gameboardArr[b] == gameboardArr[c])){
-                return [a , b , c]
-            }
-        }   
-        return false;
+    const playerWon = (player) =>  {
+        return winCombos.some(combo => {
+            return combo.every(index => gameboardArr[index] === player)
+        })
     }
 
     function cellClick(e) {
         //when button is clicked take the index
         let index = e.target.index;
+        currentPlayer = currentPlayer === playerX ? playerO : playerX;
+        e.target.innerText = currentPlayer;
+
 
         //if it is not the gameboard array index
         if(!gameboardArr[index]){
             //gameboard index is equal to current player
             gameboardArr[index] = currentPlayer;
             //we make the current player appear
-            e.target.innerText = currentPlayer;
-            console.log(currentPlayer);
 
-
-        }else {
-            currentPlayer = currentPlayer == playerX ? playerO : playerX;
-            e.target.innerText = currentPlayer;
+            if(playerWon(currentPlayer)){
+                winnerShow.innerHTML = '${currentPlayer} has won!';
+            }
         }
-
 
     }
 
