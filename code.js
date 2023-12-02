@@ -11,6 +11,8 @@ const tictactoe = (function() {
     let playerX = "X";
     let playerO = "O";
     let currentPlayer = playerX;
+    const isPlayer_X_Turn = false;
+
     
     //creating a empty array
     gameboardArr = Array(9).fill('');
@@ -58,10 +60,9 @@ const tictactoe = (function() {
 
     function cellClick(e) {
         //when button is clicked take the index
-        let index = e.target.index;
-        currentPlayer = currentPlayer === playerX ? playerO : playerX;
+        let index = e.target;
+        const currentClass = isPlayer_X_Turn ? playerX : playerO ;
         e.target.innerText = currentPlayer;
-
 
         //if it is not the gameboard array index
         if(!gameboardArr[index]){
@@ -78,6 +79,7 @@ const tictactoe = (function() {
 
     //button section
     const startGame = () => {
+        const isPlayer_X_Turn = false;
         cells.forEach(cell => cell.addEventListener('click',cellClick));
     }
 
