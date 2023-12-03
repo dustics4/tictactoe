@@ -11,7 +11,7 @@ const tictactoe = (function() {
     let playerX = "X";
     let playerO = "O";
     let currentPlayer = playerX;
-    const isPlayer_X_Turn = false;
+    let isPlayer_X_Turn = false;
 
     
     //creating a empty array
@@ -65,16 +65,14 @@ const tictactoe = (function() {
         placeMark(cell, currentClass);
         //if it is not the gameboard array index
        
-           
-            if(playerWon(currentPlayer)){
+            if(playerWon(currentClass)){
                 winnerShow.innerHTML = `${currentPlayer} has won!`;
             }else if(gameboardArr.every(cell => cell !== '')){
                 winnerShow.innerHTML = "It's a Draw !";
             }else {
+                swapTurns();
             }
             
-        
-
     }
 
     const placeMark = (cell, currentClass) => {
