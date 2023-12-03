@@ -60,24 +60,29 @@ const tictactoe = (function() {
 
     function cellClick(e) {
         //when button is clicked take the index
-        let index = e.target;
-
+        let cell = e.target;
+        const currentClass = isPlayer_X_Turn ? playerX : playerO;
+        placeMark(cell, currentClass);
         //if it is not the gameboard array index
-        if(gameboardArr[index] === "" && !winnerShow.textContent){
-            //gameboard index is equal to current player
-            gameboardArr[index] = currentPlayer;
-            //we make the current player appear
-            e.target.textContent = currentPlayer;
+       
+           
             if(playerWon(currentPlayer)){
                 winnerShow.innerHTML = `${currentPlayer} has won!`;
             }else if(gameboardArr.every(cell => cell !== '')){
                 winnerShow.innerHTML = "It's a Draw !";
             }else {
-                currentPlayer = currentPlayer === playerX ? playerX : playerO;
             }
             
-        }
+        
 
+    }
+
+    const placeMark = (cell, currentClass) => {
+        cell.classList.add(currentClass)
+    }   
+
+    const swapTurns = () => {
+        isPlayer_X_Turn = !isPlayer_X_Turn;
     }
 
     //button section
