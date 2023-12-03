@@ -41,8 +41,9 @@ const tictactoe = (function() {
                 winnerShow.innerHTML = "It's a Draw !";
             }
 
-            console.log("Check");
             currentPlayer = currentPlayer === "X" ? "O" : "X";
+            console.log("Check");
+
         }
             
             
