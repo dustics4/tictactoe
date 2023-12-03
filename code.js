@@ -30,14 +30,15 @@ const tictactoe = (function() {
 
     function cellClick(e) {
         //when button is clicked take the index
-        let index = e.target.id;
+        const id = e.target.dataset.index;
         //if it is not the gameboard array index
-        if(!gameboardArr[index]){
-            gameboardArr[index] = currentPlayer;
+        if(!gameboardArr[id]){
+            gameboardArr[id] = currentPlayer;
             e.target.textContent = currentPlayer;
             
             if(playerWon(currentPlayer)){
                 winnerShow.innerHTML = `${currentPlayer} has won!`;
+                //implement how to stop it from clicking when someone has won!
             }else if(gameboardArr.every(cell => cell !== '')){
                 winnerShow.innerHTML = "It's a Draw !";
             }
@@ -55,10 +56,16 @@ const tictactoe = (function() {
         })
     }
 
+    const restart = () => {
+
+    }
 
     //button section
     const startGame = () => {
-        cells.forEach(cell => cell.addEventListener('click',cellClick));
+        cells.forEach((cell, index) => {
+            cell.dataset.index = index;
+            cell.addEventListener('click', cellClick);
+        })
     }
 
     startGame();
