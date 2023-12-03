@@ -44,8 +44,6 @@ const tictactoe = (function() {
             }
 
             currentPlayer = currentPlayer === "X" ? "O" : "X";
-            console.log("Check");
-
         }   
     }
 
