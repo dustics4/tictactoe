@@ -11,7 +11,6 @@ const tictactoe = (function() {
     let playerX = "X";
     let playerO = "O";
     let currentPlayer = playerX;
-    let isPlayer_X_Turn = false;
 
     
     //creating a empty array
@@ -29,53 +28,36 @@ const tictactoe = (function() {
         [2, 4, 6]
       ];
 
-    function makeMove(row, col) {
-
-        //start with making sure the game is started
-        // "!gameover" and gameboard row , col are equal to  "-" , has to be equal to player
-        if(!gameOver && gameboard[row][col] === "-" ){
-            //now me make sure game board is filled with the current player
-            gameboard[row][col] = currentPlayer;
-            //Once the move has been made we display the move on the board
-            displayBoard();
-            if(winCon()) {
-                console.log("Player : " + currentPlayer + "Has Won!")
-                gameOver = true;
-            }else if (!gameboard.flat().includes("-")){
-                console.log ("It's a tie!");
-                gameOver = true;
-            }else {
-                currentPlayer = currentPlayer === "X" ? "O" : "X";
-                console.log("Next player : " + currentPlayer);
+    function cellClick(e) {
+        //when button is clicked take the index
+        let index = e.target.id;
+        //if it is not the gameboard array index
+        if(!gameboardArr[index]){
+            gameboardArr[index] = currentPlayer;
+            e.target.textContent = currentPlayer;
+            if(playerWon(currentPlayer)){
+                winnerShow.innerHTML = `${currentPlayer} has won!`;
+            }else if(gameboardArr.every(cell => cell !== '')){
+                winnerShow.innerHTML = "It's a Draw !";
             }
+
+            console.log("Check");
+            currentPlayer = currentPlayer === "X" ? "O" : "X";
         }
+            
             
     }
 
+    //compares the gameboard with the wincombinations
     const playerWon = (player) =>  {
         return winCombos.some(combo => {
             return combo.every(index => gameboardArr[index] === player)
         })
     }
 
-    function cellClick(e) {
-        //when button is clicked take the index
-        let cell = e.target;
-        //if it is not the gameboard array index
-       
-            if(playerWon(currentPlayer)){
-                winnerShow.innerHTML = `${currentPlayer} has won!`;
-            }else if(gameboardArr.every(cell => cell !== '')){
-                winnerShow.innerHTML = "It's a Draw !";
-            }else {
-                swapTurns();
-            }
-            
-    }
 
     //button section
     const startGame = () => {
-        const isPlayer_X_Turn = false;
         cells.forEach(cell => cell.addEventListener('click',cellClick));
     }
 
