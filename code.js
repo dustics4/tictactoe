@@ -35,6 +35,7 @@ const tictactoe = (function() {
         if(!gameboardArr[index]){
             gameboardArr[index] = currentPlayer;
             e.target.textContent = currentPlayer;
+            
             if(playerWon(currentPlayer)){
                 winnerShow.innerHTML = `${currentPlayer} has won!`;
             }else if(gameboardArr.every(cell => cell !== '')){
@@ -44,9 +45,7 @@ const tictactoe = (function() {
             currentPlayer = currentPlayer === "X" ? "O" : "X";
             console.log("Check");
 
-        }
-            
-            
+        }   
     }
 
     //compares the gameboard with the wincombinations
