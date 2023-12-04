@@ -58,6 +58,7 @@ const tictactoe = (function() {
         gameboardArr = Array(9).fill('');
         currentPlayer = playerX;
         winnerShow = '';
+        cells.forEach(cell => cell.textContent = '');
     }
 
     //button section
