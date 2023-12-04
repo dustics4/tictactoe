@@ -71,12 +71,12 @@ const tictactoe = (function() {
         for (let i = 0; i < divs.length; i++) {
             if (divs[i].style.display === "none") {
               divs[i].style.display = "block";
-              button.textContent = "Hide";
+              startButton.style.display = "none";
             } else {
               divs[i].style.display = "none";
-              button.textContent = "Show";
+              startButton.style.display = "none";
             }
-          }          
+          } 
     }
 
     //button section
