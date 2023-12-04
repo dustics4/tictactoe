@@ -57,7 +57,7 @@ const tictactoe = (function() {
     const restart = () => {
         gameboardArr = Array(9).fill('');
         currentPlayer = playerX;
-        winnerShow = '';
+        winnerShow.textContent = '';
         cells.forEach(cell => cell.textContent = '');
     }
 
