@@ -65,9 +65,23 @@ const tictactoe = (function() {
         cells.forEach(cell => cell.textContent = '');
         startGame();
     }
+ 
+    const showDivs = () => {
+        const divs = document.getElementsByClassName("game");
+        for (let i = 0; i < divs.length; i++) {
+            if (divs[i].style.display === "none") {
+              divs[i].style.display = "block";
+              button.textContent = "Hide";
+            } else {
+              divs[i].style.display = "none";
+              button.textContent = "Show";
+            }
+          }
+    }
 
     //button section
     const startGame = () => {
+
         cells.forEach((cell, index) => {
             cell.dataset.index = index;
             cell.addEventListener('click', cellClick);
@@ -81,8 +95,20 @@ const tictactoe = (function() {
         })
     }
 
-    restartButton.addEventListener('click', restart);
-    startButton.addEventListener('click' , startGame);
     
+    
+    const hideDivs = function() {
+        const divs = document.getElementsByClassName("game");
+        for (let i = 0; i < divs.length; i++) {
+          divs[i].style.display = "none";
+        }
+      };
+      
+        restartButton.addEventListener('click', restart);
+        startButton.addEventListener('click' , showDivs);
+        startGame();
+
+      hideDivs();
+
 })();
 
