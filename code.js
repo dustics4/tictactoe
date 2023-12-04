@@ -6,6 +6,8 @@ const tictactoe = (function() {
     const restartButton = document.getElementById('restart');
     //Show winner
     const winnerShow = document.getElementById('winner');
+    //Start game
+    const startButton = document.getElementById('start');
 
     //starting with player X
     let playerX = "X";
@@ -39,7 +41,6 @@ const tictactoe = (function() {
             if(playerWon(currentPlayer)){
                 winnerShow.innerHTML = `${currentPlayer} has won!`;
                 stopClick();
-                //implement how to stop it from clicking when someone has won!
             }else if(gameboardArr.every(cell => cell !== '')){
                 winnerShow.innerHTML = "It's a Draw !";
             }
@@ -78,8 +79,7 @@ const tictactoe = (function() {
     }
 
     restartButton.addEventListener('click', restart);
-
-    startGame();
+    startButton.addEventListener('click' , startGame);
     
 })();
 
