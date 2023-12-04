@@ -55,7 +55,9 @@ const tictactoe = (function() {
     }
 
     const restart = () => {
-
+        gameboardArr = Array(9).fill('');
+        currentPlayer = playerX;
+        winnerShow = '';
     }
 
     //button section
@@ -65,6 +67,8 @@ const tictactoe = (function() {
             cell.addEventListener('click', cellClick);
         })
     }
+
+    restartButton.addEventListener('click', restart);
 
     startGame();
     
