@@ -38,6 +38,7 @@ const tictactoe = (function() {
             gameboardArr[id] = currentPlayer;
             e.target.textContent = currentPlayer;
             
+            //conditional statement for what happens when someone wins or draws
             if(playerWon(currentPlayer)){
                 winnerShow.innerHTML = `${currentPlayer} has won!`;
                 stopClick();
@@ -56,6 +57,7 @@ const tictactoe = (function() {
         })
     }
 
+    //restart button, clears everything and starts the game
     const restart = () => {
         gameboardArr = Array(9).fill('');
         currentPlayer = playerX;
@@ -72,6 +74,7 @@ const tictactoe = (function() {
         })
     }
 
+    //this button stops you from clicking more if the player has won
     const stopClick = () => {
         cells.forEach((cell) => {
             cell.removeEventListener('click' , cellClick);
