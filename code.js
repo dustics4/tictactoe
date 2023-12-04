@@ -66,7 +66,7 @@ const tictactoe = (function() {
         startGame();
     }
  
-    const showDivs = () => {
+    const showDivs = (e) => {
         const divs = document.getElementsByClassName("game");
         for (let i = 0; i < divs.length; i++) {
             if (divs[i].style.display === "none") {
@@ -76,12 +76,11 @@ const tictactoe = (function() {
               divs[i].style.display = "none";
               button.textContent = "Show";
             }
-          }
+          }          
     }
 
     //button section
     const startGame = () => {
-
         cells.forEach((cell, index) => {
             cell.dataset.index = index;
             cell.addEventListener('click', cellClick);
@@ -107,6 +106,7 @@ const tictactoe = (function() {
         restartButton.addEventListener('click', restart);
         startButton.addEventListener('click' , showDivs);
         startGame();
+        //need to make sure you can only click start button once.
 
       hideDivs();
 

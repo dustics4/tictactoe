@@ -12,7 +12,9 @@ body {
     justify-content: center;
     align-items: center;
     font-family:'Courier New', Courier, monospace;
-    font-size: 40px;
+    font-size: 55px;
+    font-weight: 550;
+    color:#087629;
     cursor: pointer;
 }
 
@@ -33,7 +35,10 @@ body {
 .containter h1 {
     font-family: 'Raleway' , sans-serif;
     color: #f3f3f3;
-    font-size: 3rem;
+    font-size: 3.5rem;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    margin: 0;
 }
 
 #game-board {
@@ -51,6 +56,9 @@ body {
 }
 
 #starting-with {
-    font-size: 3rem;
-    color: #f3f3f3;
+    font-size: 1.5rem;
+    color: #b574f9;
+    padding-bottom: 50px;
+    font-weight: 100;
+    opacity: 0.8;
 }
