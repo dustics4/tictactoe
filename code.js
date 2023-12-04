@@ -38,6 +38,7 @@ const tictactoe = (function() {
             
             if(playerWon(currentPlayer)){
                 winnerShow.innerHTML = `${currentPlayer} has won!`;
+                stopClick();
                 //implement how to stop it from clicking when someone has won!
             }else if(gameboardArr.every(cell => cell !== '')){
                 winnerShow.innerHTML = "It's a Draw !";
@@ -59,6 +60,7 @@ const tictactoe = (function() {
         currentPlayer = playerX;
         winnerShow.textContent = '';
         cells.forEach(cell => cell.textContent = '');
+        startGame();
     }
 
     //button section
@@ -66,6 +68,12 @@ const tictactoe = (function() {
         cells.forEach((cell, index) => {
             cell.dataset.index = index;
             cell.addEventListener('click', cellClick);
+        })
+    }
+
+    const stopClick = () => {
+        cells.forEach((cell) => {
+            cell.removeEventListener('click' , cellClick);
         })
     }
 
