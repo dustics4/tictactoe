@@ -68,13 +68,16 @@ const tictactoe = (function() {
  
     const showDivs = (e) => {
         const divs = document.getElementsByClassName("game");
+        const textPlayer = document.getElementsByClassName("text-player");
         for (let i = 0; i < divs.length; i++) {
             if (divs[i].style.display === "none") {
               divs[i].style.display = "block";
               startButton.style.display = "none";
+              startButton.textContent = "Hide";
             } else {
               divs[i].style.display = "none";
-              startButton.style.display = "none";
+              startButton.style.display = "hidden";
+              startButton.textContent = "Show";
             }
           } 
     }
@@ -97,7 +100,7 @@ const tictactoe = (function() {
     
     
     const hideDivs = function() {
-        const divs = document.getElementsByClassName("game");
+        const divs = document.getElementsByClassName("game") ;
         for (let i = 0; i < divs.length; i++) {
           divs[i].style.display = "none";
         }

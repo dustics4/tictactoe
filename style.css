@@ -85,3 +85,34 @@ button {
     color: var(--primary);
     font-weight: 700;
 }
+
+/* Player choose styles*/
+
+.play-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 20px;
+}
+
+.play-header input {
+    padding: 10px 0px;
+    border-radius : 10px;
+    font-size: 15px;
+    width: 20%;
+    margin-top: 10px;
+}
+
+.play-header h1{
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 50px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+}
+
+.play-header label {
+    padding-top: 20px;
+}
