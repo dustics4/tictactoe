@@ -66,20 +66,22 @@ const tictactoe = (function() {
         startGame();
     }
  
-    const showDivs = (e) => {
+    const showGame = (e) => {
         const divs = document.getElementsByClassName("game");
-        const textPlayer = document.getElementsByClassName("text-player");
+        const headerText = document.getElementsByClassName("play-header");
         for (let i = 0; i < divs.length; i++) {
             if (divs[i].style.display === "none") {
               divs[i].style.display = "block";
               startButton.style.display = "none";
-              startButton.textContent = "Hide";
             } else {
               divs[i].style.display = "none";
               startButton.style.display = "hidden";
-              startButton.textContent = "Show";
             }
           } 
+
+          for (let i = 0; i < headerText.length; i++) {
+            headerText[i].style.display = "none";
+          }
     }
 
     //button section
@@ -107,7 +109,7 @@ const tictactoe = (function() {
       };
       
         restartButton.addEventListener('click', restart);
-        startButton.addEventListener('click' , showDivs);
+        startButton.addEventListener('click' , showGame);
         startGame();
         //need to make sure you can only click start button once.
 
