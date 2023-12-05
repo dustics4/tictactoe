@@ -109,7 +109,7 @@ const tictactoe = (function() {
       };
       
         restartButton.addEventListener('click', restart);
-        startButton.addEventListener('click' , showGame);
+        startButton.addEventListener('submit' , showGame);
         startGame();
         //need to make sure you can only click start button once.
 
