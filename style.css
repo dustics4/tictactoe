@@ -1,6 +1,17 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Declaring font colors */
+
+:root {
+    --lighten-yellow: #F2B138;
+    --primary: #1A2B33;
+    --secondary: #1E3640;
+    --grey: #A9BEC8;
+    --dark-cyan: #34C3BE;
 }
 
 .cell {
@@ -61,4 +72,16 @@ body {
     padding-bottom: 50px;
     font-weight: 100;
     opacity: 0.8;
+}
+
+button {
+    background-color: var(--lighten-yellow);
+    border-radius: 10px;
+    text-transform: uppercase;
+    border-style: none;
+    padding: 20px 20px;
+    font-size: 24px;
+    letter-spacing: .08em;
+    color: var(--primary);
+    font-weight: 700;
 }
