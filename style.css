@@ -95,10 +95,11 @@ button {
     align-items: center;
     width: 100%;
     padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .play-header input {
-    padding: 10px 0px;
+    padding: 10px;
     border-radius : 10px;
     font-size: 15px;
     width: 20%;
@@ -114,5 +115,5 @@ button {
 }
 
 .play-header label {
-    padding-top: 20px;
+    padding-top: 10px;
 }
