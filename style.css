@@ -88,7 +88,7 @@ button {
 
 /* Player choose styles*/
 
-.play-header {
+.players {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -115,11 +115,30 @@ button {
 }
 
 .players label {
-    padding-top: 10px;
+    padding-top: 20px;
+    color: var(--lighten-yellow);
+    text-transform: uppercase;
+}
+
+#start {
+    margin-top: 40px;
 }
 
 #starting-player , #player1-display , #player2-display {
     text-transform: uppercase;
-    color: var(--lighten-yellow);
+}
 
+#starting-player {
+    color: #852d2d;
+    font-size: 1.2rem;
+    padding-bottom: 10px;
+    font-weight: 700;
+}
+
+#player1-display , #player2-display {
+    color: var(--lighten-yellow);
+}
+
+#winner {
+    text-transform: uppercase;
 }
