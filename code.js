@@ -13,9 +13,11 @@ const tictactoe = (function() {
     const player1Input = document.getElementById("player1");
     const player2Input = document.getElementById("player2");
 
+    //supposed to display the players name
     const player1Display = document.getElementById("player1-display");
     const player2Display = document.getElementById("player2-display");
 
+    //starts the player which is starting
     const startingPlayer = document.getElementById("starting-player");
 
 
@@ -67,7 +69,7 @@ const tictactoe = (function() {
             }else if(gameboardArr.every(cell => cell !== '')){
                 winnerShow.innerHTML = "It's a Draw !";
             }
-
+            //switch bettween the current players
             currentPlayer = currentPlayer === "X" ? "O" : "X";
         }   
     }
@@ -87,10 +89,10 @@ const tictactoe = (function() {
         cells.forEach(cell => cell.textContent = '');
         startGame();
     }
- 
+    
+    //function to show the tic tac toe game
     const showGame = (e) => {
         const divs = document.getElementsByClassName("game");
-        const headerText = document.getElementsByClassName("play-header");
         for (let i = 0; i < divs.length; i++) {
             if (divs[i].style.display === "none") {
               divs[i].style.display = "block";
@@ -100,10 +102,6 @@ const tictactoe = (function() {
               startButton.style.display = "hidden";
             }
           } 
-
-          for (let i = 0; i < headerText.length; i++) {
-            headerText[i].style.display = "none";
-          }
     }
 
     //button section
@@ -122,22 +120,25 @@ const tictactoe = (function() {
     }
 
     
-    
+    //hides the game when starting
     const hideDivs = function() {
         const divs = document.getElementsByClassName("game") ;
         for (let i = 0; i < divs.length; i++) {
           divs[i].style.display = "none";
         }
       };
-      
-        restartButton.addEventListener('click', restart);
-        startButton.addEventListener('click', function(){
-            const player1Name = player1Input.value;
-            const player2Name = player2Input.value;
+        
+      //restart button
+    restartButton.addEventListener('click', restart);
 
-            if (player1Name && player2Name) {
-                showGame();
-                startGame();
+    //button to start the game
+    startButton.addEventListener('click', function(){
+        const player1Name = player1Input.value;
+        const player2Name = player2Input.value;
+        //if statement for player input
+        if (player1Name && player2Name) {
+            showGame();
+            startGame();
 
             playerInput.style.display = "none";
             // Display player names in the game section
@@ -149,6 +150,7 @@ const tictactoe = (function() {
             }
         });
 
+        //makes sure to hide the divs
         hideDivs();
 })();
 
