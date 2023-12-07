@@ -98,7 +98,7 @@ button {
     padding-bottom: 20px;
 }
 
-.play-header input {
+.players input {
     padding: 10px;
     border-radius : 10px;
     font-size: 15px;
@@ -106,7 +106,7 @@ button {
     margin-top: 10px;
 }
 
-.play-header h1{
+.players h1{
     text-transform: uppercase;
     font-weight: 500;
     font-size: 50px;
@@ -114,6 +114,12 @@ button {
     padding-top: 40px;
 }
 
-.play-header label {
+.players label {
     padding-top: 10px;
+}
+
+#starting-player , #player1-display , #player2-display {
+    text-transform: uppercase;
+    color: var(--lighten-yellow);
+
 }

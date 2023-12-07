@@ -15,15 +15,13 @@
     <div class="containter">
 
         
-        <div class="play-header" id="play-head">
-            
+        <div class="players" id="players-show">
                 <label for="name">Player 1</label>
-                <input type="text" name="player1" id="playerOne"  placeholder="PLAYER ONE" required>
+                <input type="text" name="player1" id="player1"  placeholder="PLAYER ONE" required>
                 <label for="name">Player 2</label>
-                <input type="text" name="player2" id="playerTwo"  placeholder="PLAYER TWO" required>
+                <input type="text" name="player2" id="player2"  placeholder="PLAYER TWO" required>
                 <button id="start" type="submit" value="submit">Start Game</button>
             
-
         </div>
 
 
@@ -31,8 +29,10 @@
         <div class="game">
 
             <h1>Tic Tac Toe</h1>
-
-                <div id="starting-with"> You are starting with X</div>
+            
+            <div id="starting-player"></div>
+             <div id="player1-display"></div>
+             <div id="player2-display"></div>
                 <div id="game-board">
                     <div class="cell" ></div>
                     <div class="cell" ></div>
